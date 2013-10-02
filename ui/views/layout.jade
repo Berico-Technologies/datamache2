@@ -1,0 +1,67 @@
+doctype 5
+html
+  head
+    title Rivium
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width')
+    link(href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Give+You+Glory', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/foundation_and_overrides.css' + cachebust)
+
+    if reload
+      script(src='/socket.io/socket.io.js')
+      script(src='/javascripts/reload-client.js')
+
+    if optimize
+      script(src='/javascripts/main-built.js')
+    else
+      script(src='/javascripts/vendor/require.js', data-main='/javascripts/main.js')
+
+  body.row
+    .large-1.columns
+        nav.top-bar.show-for-small
+          ul.title-area
+            li.name
+            li.toggle-topbar.menu-icon
+              a(href='#')
+                span
+          ul.left
+            li
+              a(href='home')
+                span Home
+            li
+              a(href='search')
+                span Search
+            li
+              a(href='search')
+                span Saved Searches
+            li
+              a(href='documents')
+                span Documents
+            li
+              a(href='#')
+                span Sandbox
+        ul.side-nav.hide-for-small
+          li
+            a.logo(href='home')
+              | datamache
+              sup 2
+          li.divider
+          li
+            a(href='home')  
+          li
+            a(href='search')  
+          li
+            a(href='savedsearch')
+              div 5
+          li
+            a(href='documents')  
+          li
+            a(href='#')  
+          li
+            a(href='#')  
+          li.divider
+          li
+            a(href='#')  
+      .large-11.columns.content
+        block content

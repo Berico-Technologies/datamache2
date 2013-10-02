@@ -1,0 +1,135 @@
+extends layout
+
+block content
+  form.custom.documents
+    fieldset
+      .row
+        .small-12.large-1.columns.collapse
+          a.button.medium.search.drop(href='#') China 
+            i
+        .small-12.large-8.columns.hide-for-small
+          a.button.medium.documents_next
+            i 
+          a.button.medium.document_folder Xi Jingping
+        .small-12.large-3.columns
+          .right
+            .row.collapse
+              .small-10.large-10.columns
+                input(type='text', value='search file').filter
+              .small-2.large-2.columns
+                a.button.medium.search.filter(href='#')
+                  i
+    section.documents_results
+      .row
+        .large-12.columns
+          .section-container.vertical-tabs(data-section='vertical-tabs')
+            section
+              p.title(data-section-title='data-section-title')
+                a(href='#')
+                  i.bookmarks
+                  span.section Bookmarks 
+                  span.documents 21
+              .content(data-section-content='data-section-content')
+                  p.title(data-section-content='data-section-content')
+                    a(href='#')
+                      i
+                      span.section Chinese Cabinet 
+                      span.documents 21
+                  p.title(data-section-content='data-section-content')
+                    a(href='#')
+                      i
+                      span.section Xi Jinping 
+                      span.documents 21
+                      span.folders 4
+                  p.title(data-section-content='data-section-content')
+                    a(href='#')
+                      i
+                      span.section Hacking 
+                      span.documents 8
+                      span.folders 25
+                  p.title(data-section-content='data-section-content')
+                    a(href='#')
+                      i
+                      span.section Xi Jinping 
+                      span.documents 21
+                      span.folders 4
+                  p.title(data-section-content='data-section-content')
+                    a(href='#')
+                      i
+                      span.section Nigeria China Relations 
+                      span.documents 21
+                  p.title(data-section-content='data-section-content')
+                    a(href='#')
+                      i
+                      span.section NPC 
+                      span.documents 21
+                      span.folders 4
+                  p.title(data-section-content='data-section-content')
+                    a(href='#')
+                      i
+                      span.section Transition 
+                      span.documents 89
+                      span.folders 3
+                  p.title(data-section-content='data-section-content')
+                    a(href='#')
+                      i
+                      span.section China: The Party and the... 
+                      span.documents 15
+                  p.title(data-section-content='data-section-content')
+                    a(href='#')
+                      i
+                      span.section Bo Xilai Corruption 
+                      span.documents 2
+                      span.folders 55
+            section
+              p.title(data-section-title='data-section-title')
+                a(href='#')  
+                  i.collaboration 
+                  span.section Team review 
+                  span.documents 21
+                  span.folders 21
+              .content(data-section-content='data-section-content')
+                p &nbsp;
+            section
+              p.title(data-section-title='data-section-title')
+                a(href='#')
+                  i
+                  span.section China 
+                  span.documents 25
+                  span.folders 8
+              .content(data-section-content='data-section-content')
+                p &nbsp;
+            section
+              p.title(data-section-title='data-section-title')
+                a(href='#')
+                  i
+                  span.section Russia 
+                  span.documents 21
+              .content(data-section-content='data-section-content')
+                p &nbsp;
+            section
+              p.title(data-section-title='data-section-title')
+                a(href='#')  
+                  i.collaboration 
+                  span.section Working with Chris 
+                  span.documents 21
+                  span.folders 4
+              .content(data-section-content='data-section-content')
+                p &nbsp;
+            section
+              p.title(data-section-title='data-section-title')
+                a(href='#')
+                  i
+                  span.section South Korea 
+                  span.documents 8
+                  span.folders 25
+              .content(data-section-content='data-section-content')
+                p &nbsp;
+            section
+              p.title(data-section-title='data-section-title')
+                a(href='#')
+                  i
+                  span.section Leadership  
+                  span.documents 15
+              .content(data-section-content='data-section-content')
+                p &nbsp;

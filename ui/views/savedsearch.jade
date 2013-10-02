@@ -1,0 +1,242 @@
+extends layout
+
+block content
+  form.custom
+    fieldset
+        .row
+          .small-10.large-9.columns
+            .row.collapse
+              .small-11.large-11.columns
+                input(type='text', value='Chinese Intel').start
+              .small-1.large-1.columns
+                a.button.medium.search(href='#')
+                  i
+          .small-6.large-1.columns.hide-for-small
+            a.button.medium.savesearch(href='#') Save  
+          .small-6.large-2.columns.hide-for-small
+            a.button.medium.savesearchas(href='#') Save As
+    section.savedsearch_results
+      .row
+        .large-6.columns
+          .row
+            .small-12.large-12.columns
+              .right
+                a.dropdown.show-for-small.searchoptions(href='#', data-dropdown='search_options') Options
+                  br
+                ul#search_options.f-dropdown.show-for-small
+                  li
+                    a(href='#') Save
+                  li
+                    a(href='#') Save As
+                  li
+                    a(href='#', data-reveal-id='myModal') Filter
+                #myModal.reveal-modal
+                    h2 Awesome. I have it.
+                      p.lead Your couch.  It is mine.
+                      p Im a cool paragraph that lives inside of an even cooler modal. Wins
+                      a.close-reveal-modal ×
+              a(href="#").right.geo_view Geo Vizualise
+              em.left  Did You mean 
+                strong  Chinese Leadership
+          .row
+            .small-12.large-12.columns
+              label.checkall 
+                strong Select
+              label.checkall all
+              label.checkall none
+          article
+            .row
+              .small-1.large-1.columns
+              .small-10.large-11.columns
+                .entry
+                  strong Bo Xilai Clan Links Included Citigroup Hiring of Elder Son
+                  .capco.unclassified UNCLASSIFIED
+                  p
+                    | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro qui, rem ipsum quia dolor sit amet.
+                  span.time Monday, December 3, 2012
+          article
+            .row
+              .small-1.large-1.columns
+              .small-10.large-11.columns
+                .entry
+                  strong
+                    | China, Japan and South Korea continue to be stuck in the past: 2012 and petty nationalism
+                  .capco.unclassified UNCLASSIFIED
+                  p
+                    | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro qui, rem ipsum quia dolor sit amet.
+                  span.time Sunday, December 2, 2012
+          article
+            .row
+              .small-1.large-1.columns
+              .small-10.large-11.columns
+                .entry
+                  strong
+                    | Info wars and Google mechanisms: State sponsored attacks, manipulation or national security?
+                  .capco.unclassified UNCLASSIFIED
+                  p
+                    | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro qui, rem ipsum quia dolor sit amet.
+                  span.time Sunday, December 2, 2012
+          article
+            .row
+              .small-1.large-1.columns
+              .small-10.large-11.columns
+                .entry
+                  strong U.S. has work cut out to make sure Afghan forces are combat ready 
+                  .capco.unclassified UNCLASSIFIED
+                  p
+                    | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro qui, rem ipsum quia dolor sit amet.
+                  span.time Sunday, December 2, 2012
+          article
+            .row
+              .small-1.large-1.columns
+              .small-10.large-11.columns
+                .entry
+                  strong
+                    | M23 Rebels to pull out of Goma in Democratic Republic of Congo: Rwanda, Uganda and UN
+                    .capco.unclassified UNCLASSIFIED
+                  p
+                    | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro qui, rem ipsum quia dolor sit amet.
+                  span.time Sunday, December 2, 2012
+          article
+            .row
+              .small-1.large-1.columns
+              .small-10.large-11.columns
+                .entry
+                  strong
+                    | Chechen connection with Al Nusrah Front in Syria is growing: Eyes on Turkey and concern in Russia
+                  .capco.unclassified UNCLASSIFIED
+                  p
+                    | Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro qui, rem ipsum quia dolor sit amet.
+                  span.time Sunday, December 2, 2012
+        .large-6.columns.filters_container.hide-for-small
+          .row
+            .large-12.columns
+              aside
+                ul
+                  li
+                    a
+                  li
+                    a
+                  li
+                    a
+                  li
+                    a
+                  li
+                    a
+              p
+              .section-container.accordion(data-section='accordion')
+                section
+                  p.title(data-section-title='data-section-title')
+                    a(href='#')
+                      | Geo
+                      i#burger_stack
+                      i#globe_two
+                      i#globe_one
+                  .content(data-section-content='data-section-content')
+                    p
+                      img(src='images/rivium_ui_map.jpg', alt='')
+                section
+                  p.title(data-section-title='data-section-title')
+                    a(href='#')
+                      | Timeline
+                      i
+                  .content(data-section-content='data-section-content')
+                    p  
+                section
+                  p.title(data-section-title='data-section-title')
+                    a(href='#')
+                      | Published Date
+                      i
+                  .content(data-section-content='data-section-content')
+                    p  
+                section
+                  p.title(data-section-title='data-section-title')
+                    a(href='#')
+                      | Sources
+                      i
+                  .content(data-section-content='data-section-content')
+                    p  
+                section
+                  p.title(data-section-title='data-section-title')
+                    a(href='#')
+                      | Events
+                      i
+                  .content(data-section-content='data-section-content')
+                    p  
+    section.geo_view
+      .row
+        .large-12.columns
+          div.map_container
+            .close_map
+              a(href="#") X
+            article
+              img(src='images/lebanese_army.jpg', alt='')
+              h5 US denies talks planned with Taliban
+              div.date Monday, December 3, 2013
+              .capco.unclassified UNCLASSIFIED
+              p The US has not scheduled talks with the Taliban, the State Department has said, after reports that discussions with the Afghan group could begin this week in the Qatari capital, Doha.
+              p "Reports of a meeting scheduled are inaccurate," spokeswoman...
+              p
+                aside
+                  div
+                  div
+                  div
+            .list_results
+              a(href="#") List 
+            .results_container
+              .row
+                .large-12.columns
+                  article
+                    .row
+                      .small-1.large-1.columns
+                      .small-10.large-11.columns
+                        .entry
+                          strong Bo Xilai Clan Links Included Citigroup Hiring of Elder Son
+                          .capco.unclassified UNCLASSIFIED
+                          span.time Monday, December 3, 2012
+                  article
+                    .row
+                      .small-1.large-1.columns
+                      .small-10.large-11.columns
+                        .entry
+                          strong
+                            | China, Japan and South Korea continue to be stuck in the past: 2012 and petty nationalism
+                          .capco.unclassified UNCLASSIFIED
+                          span.time Sunday, December 2, 2012
+                  article
+                    .row
+                      .small-1.large-1.columns
+                      .small-10.large-11.columns
+                        .entry
+                          strong
+                            | Info wars and Google mechanisms: State sponsored attacks, manipulation or national security?
+                          .capco.unclassified UNCLASSIFIED
+                          span.time Sunday, December 2, 2012
+                  article
+                    .row
+                      .small-1.large-1.columns
+                      .small-10.large-11.columns
+                        .entry
+                          strong U.S. has work cut out to make sure Afghan forces are combat ready 
+                          .capco.unclassified UNCLASSIFIED
+                          span.time Sunday, December 2, 2012
+                  article
+                    .row
+                      .small-1.large-1.columns
+                      .small-10.large-11.columns
+                        .entry
+                          strong
+                            | M23 Rebels to pull out of Goma in Democratic Republic of Congo: Rwanda, Uganda and UN
+                          .capco.unclassified UNCLASSIFIED
+                          span.time Sunday, December 2, 2012
+                  article
+                    .row
+                      .small-1.large-1.columns
+                      .small-10.large-11.columns
+                        .entry
+                          strong
+                            | Chechen connection with Al Nusrah Front in Syria is growing: Eyes on Turkey and concern in Russia
+                          .capco.unclassified UNCLASSIFIED
+                          span.time Sunday, December 2, 2012
+
+

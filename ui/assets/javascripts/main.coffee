@@ -1,0 +1,146 @@
+require
+  urlArgs: "b=#{(new Date()).getTime()}"
+  paths:
+    jquery: 'vendor/jquery'
+    f:      'vendor/foundation'
+  shim:
+    "vendor/foundation/foundation": ["jquery"]
+  , ["jquery", "vendor/foundation/foundation"]
+  , ($) ->
+
+    requirejs [
+      "f/foundation.alerts"
+      "f/foundation.clearing"
+      "f/foundation.cookie"
+      "f/foundation.dropdown"
+      "f/foundation.forms"
+      "f/foundation.interchange"
+      "f/foundation.joyride"
+      "f/foundation.magellan"
+      "f/foundation.orbit"
+      "f/foundation.placeholder"
+      "f/foundation.reveal"
+      "f/foundation.section"
+      "f/foundation.tooltips"
+      "f/foundation.topbar"], ->
+
+      $doc = $(document)
+      if $.fn.foundationAlerts then $doc.foundationAlerts() else null
+      if $.fn.foundationButtons then $doc.foundationButtons() else null
+      if $.fn.foundationAccordion then $doc.foundationAccordion() else null
+      if $.fn.foundationNavigation then $doc.foundationNavigation() else null
+      if $.fn.foundationTopBar then $doc.foundationTopBar() else null
+      if $.fn.foundationCustomForms then $doc.foundationCustomForms() else null
+      if $.fn.foundationMediaQueryViewer then $doc.foundationMediaQueryViewer() else null
+      if $.fn.foundationTabs then $doc.foundationTabs({callback : $.foundation.customForms.appendCustomMarkup}) else null
+      if $.fn.foundationTooltips then $doc.foundationTooltips() else null
+      if $.fn.foundationMagellan then $doc.foundationMagellan() else null
+      if $.fn.foundationClearing then $doc.foundationClearing() else null
+      if $.fn.placeholder then $('input, textarea').placeholder() else null
+
+      $doc.foundation()
+
+      $("dl.sub-nav.active_menu dd").click ->
+        $(this).siblings().removeClass "active"
+        $(this).addClass "active"
+        $(".news_feed").hide()
+        $(".news_feed").fadeIn("fast")
+
+      $(".filter_keyword a.search").click ->
+        $(".news_feed").hide()
+        $(".news_feed").fadeIn("fast")
+
+      $(".actions, .filters_container aside, section.geo_view, .results_container, .search_results").hide()
+
+
+      $("article .small-1").append("<label for='checkbox1'><input id='checkbox1' type='checkbox' style='display: none;' class='hidden-field'><span class='custom checkbox'> </span></label>")
+
+
+      $("label.checkall.all").click ->
+        $("article span.custom").addClass "checked"
+        offset = $(this).offset()
+        $(".filters_container aside").fadeIn("fast")
+        $(".filters_container aside").offset
+          top: offset.top
+          left: offset.left
+
+      $("label.checkall.none").click ->
+        $("article span.custom").removeClass "checked"
+
+      $("form .row article label").click ->
+        offset = $(this).offset()
+        $(".filters_container aside").fadeIn("fast")
+        $(".filters_container aside").offset
+          top: offset.top
+          left: offset.left
+
+      $(".filters_container aside ul li").click ->
+        $(".filters_container aside").fadeOut("fast")
+
+        
+
+      $(".entry").mouseenter ->
+       $(this).append("<div class='actions' style='display:none'><ul><li> <a href='#'></a></li><li> <a href='#'></a></li><li> <a href='#'></a></li><li> <a href='#'></a></li><li> <a href='#'></a></li></ul></div>")
+       $(this).children(".actions").show()
+
+      $(".entry").mouseleave ->
+       $(this).children(".actions").hide()
+       $(this).children(".actions").remove()
+      
+
+# Landing page coachmark
+
+      $(".coachmark h2").click ->
+        $("div.coachmark").hide()
+        $("form input[type='text']").focus()
+        $("form input[type='text']").val ""
+      
+      $(document).keydown ->
+        $("div.coachmark").hide()
+        $("form input[type='text']").focus()
+
+      $("input[type='text'].filter").click ->
+        $(this).val ""
+
+
+# Landing search action
+
+      $("form .button.search").click ->
+        $(".search_results").fadeIn()
+
+      $("form.custom").submit ->
+        $(".search_results").fadeIn()
+        false
+
+# Document options 
+
+      $(".filters_container aside").mouseleave ->
+        $(".filters_container aside").hide()
+
+
+# Geo view actions
+
+      $("a.geo_view").click ->
+        $("section.geo_view").fadeIn()
+        $("section.search_results, section.savedsearch_results").hide()
+        $("form.custom fieldset").hide()
+      
+      $(".close_map").click ->
+        $("section.geo_view").hide()
+        $("section.search_results, section.savedsearch_results").fadeIn()
+        $("form.custom fieldset").show()
+
+      $(".list_results").click ->
+        $(@).toggleClass "results_opened"
+        #$(".results_container").toggle()
+        $(".results_container").animate width: "toggle"
+
+# Saved search_results
+
+      $("section.documents_results .content p.title").click ->
+        window.location.href = "/savedsearch"
+
+# Search Filter hacks
+      $(".accordion").on "click", "section", (event) ->
+        $("section.active").find(".content").slideToggle "slow"
+        $(this).find(".content").slideToggle "slow"
